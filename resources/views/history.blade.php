@@ -1,14 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-   <div class="container">
-    inp
+    <div class="container">
 
-    <input type="checkbox" value="value1">Value 1</input>
-<input type="checkbox" value="value2">Value 2</input>
-<input type="checkbox" value="value3">Value 3</input>
+        <div class="row justify-content-center">
 
-   </div>
+            <div class="col-md-8">
+                @foreach ($variable as $item)
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <h3>{{ $item->keyword }} --found--->   {{$item->total}} --username->   {{$item->user->id}}</h3>
+                        </label>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
 
 
+
+    </div>
 @endsection
